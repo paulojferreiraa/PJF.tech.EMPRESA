@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PJF.tech | Landing Pages, Sites Institucionais e Páginas de Venda</title>
+    <meta name="description" content="A PJF.tech cria Landing Pages, Sites Institucionais e Páginas de Venda modernas, responsivas e profissionais para empresas e negócios.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#090D16',
+                        darkCard: '#111827',
+                        darkBorder: '#1F2937',
+                        brandPrimary: '#6366F1',
+                        brandSecondary: '#8B5CF6',
+                        brandAccent: '#3B82F6',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .faq-icon {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-100 antialiased selection:bg-brandPrimary selection:text-white">
+
+    <!-- 1. HEADER -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-darkBg/80 backdrop-blur-md border-b border-darkBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="p-2 bg-gradient-to-r from-brandPrimary to-brandSecondary rounded-xl text-white">
+                    <i data-lucide="rocket" class="w-6 h-6"></i>
+                </div>
+                <span class="text-2xl font-bold tracking-tight text-white">PJF<span class="text-brandPrimary">.tech</span></span>
+            </div>
+
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
+                <a href="#inicio" class="hover:text-brandPrimary transition-colors">Início</a>
+                <a href="#diferenciais" class="hover:text-brandPrimary transition-colors">Diferenciais</a>
+                <a href="#processo" class="hover:text-brandPrimary transition-colors">Processo</a>
+                <a href="#faq" class="hover:text-brandPrimary transition-colors">FAQ</a>
+            </nav>
+
+            <div class="hidden md:block">
+               
+                <a href="https://wa.me/5541995885907?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento,%20por%20favor." target="_blank" class="px-5 py-2.5 bg-gradient-to-r from-brandPrimary to-brandSecondary hover:opacity-90 text-white font-medium rounded-lg shadow-lg shadow-brandPrimary/20 transition-all text-sm">
+                    Solicitar orçamento
+                </a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-darkCard border-b border-darkBorder px-4 pt-4 pb-6 space-y-4">
+            <a href="#inicio" class="block text-gray-300 hover:text-white mobile-link">Início</a>
+            <a href="#diferenciais" class="block text-gray-300 hover:text-white mobile-link">Diferenciais</a>
+            <a href="#servicos" class="block text-gray-300 hover:text-white mobile-link">Serviços</a>
+            <a href="#processo" class="block text-gray-300 hover:text-white mobile-link">Processo</a>
+            <a href="#faq" class="block text-gray-300 hover:text-white mobile-link">FAQ</a>
+            <a href="#contato" class="block text-center py-3 bg-gradient-to-r from-brandPrimary to-brandSecondary text-white font-medium rounded-lg mobile-link">
+                Solicitar orçamento
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 2. HERO SECTION -->
+        <section id="inicio" class="relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden">
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brandPrimary/20 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-brandPrimary mb-6">
+                    <i data-lucide="zap" class="w-4 h-4 text-brandPrimary"></i>
+                    <span>Desenvolvimento de Alta Performance</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
+                    Seu negócio merece uma presença digital <span class="bg-gradient-to-r from-brandPrimary via-brandSecondary to-brandAccent bg-clip-text text-transparent">à altura.</span>
+                </h1>
+
+                <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
+                    Criamos Landing Pages, Sites Institucionais e Páginas de Venda modernas, rápidas e pensadas para transformar visitantes em clientes.
+                </p>
+
+               <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+    <a href="https://wa.me/5541995885907?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento,%20por%20favor." target="_blank" class="inline-flex items-center justify-center px-6 py-3.5 bg-gradient-to-r from-brandPrimary to-brandSecondary hover:opacity-90 text-white font-medium rounded-xl shadow-lg shadow-brandPrimary/25 transition-all text-base">
+        <span>Solicitar orçamento</span>
+        <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+    </a>
+    <a href="#servicos" class="inline-flex items-center justify-center px-6 py-3.5 bg-darkCard hover:bg-darkBorder border border-darkBorder text-gray-300 font-medium rounded-xl transition-all text-base">
+        Ver soluções
+    </a>
+</div>
+            </div>
+        </section>
+
+        <!-- 3. DIFERENCIAIS -->
+        <section id="diferenciais" class="py-12 bg-darkCard/50 border-y border-darkBorder">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="p-4">
+                        <i data-lucide="zap" class="w-8 h-8 text-brandPrimary mx-auto mb-2"></i>
+                        <h4 class="font-bold text-white">⚡ Performance</h4>
+                        <p class="text-xs text-gray-400 mt-1">Sites rápidos e otimizados.</p>
+                    </div>
+                    <div class="p-4">
+                        <i data-lucide="smartphone" class="w-8 h-8 text-brandPrimary mx-auto mb-2"></i>
+                        <h4 class="font-bold text-white">📱 Responsividade</h4>
+                        <p class="text-xs text-gray-400 mt-1">Perfeito em qualquer tela.</p>
+                    </div>
+                    <div class="p-4">
+                        <i data-lucide="target" class="w-8 h-8 text-brandPrimary mx-auto mb-2"></i>
+                        <h4 class="font-bold text-white">🎯 Conversão</h4>
+                        <p class="text-xs text-gray-400 mt-1">Foco em gerar negócios.</p>
+                    </div>
+                    <div class="p-4">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-brandPrimary mx-auto mb-2"></i>
+                        <h4 class="font-bold text-white">🔒 Qualidade</h4>
+                        <p class="text-xs text-gray-400 mt-1">Código limpo e seguro.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SERVIÇOS -->
+        <section id="servicos" class="py-20 bg-darkBg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Soluções digitais para diferentes objetivos</h2>
+                    <p class="mt-4 text-gray-400">Desenvolvemos páginas profissionais direcionadas para resultados reais.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Landing Page -->
+                    <div class="bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl p-8 transition-all hover:-translate-y-1">
+                        <div class="p-3 bg-white/5 rounded-xl inline-block mb-6"><i data-lucide="layout" class="w-8 h-8 text-brandPrimary"></i></div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Landing Page</h3>
+                        <p class="text-gray-400 text-sm mb-6">Ideal para campanhas, anúncios, lançamento de produtos e captação direta de leads.</p>
+                        <a href="#contato" class="inline-flex items-center text-sm font-semibold text-brandPrimary hover:underline">Quero uma Landing Page <i data-lucide="arrow-up-right" class="ml-1 w-4 h-4"></i></a>
+                    </div>
+                    <!-- Site Institucional -->
+                    <div class="bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl p-8 transition-all hover:-translate-y-1">
+                        <div class="p-3 bg-white/5 rounded-xl inline-block mb-6"><i data-lucide="building-2" class="w-8 h-8 text-brandSecondary"></i></div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Site Institucional</h3>
+                        <p class="text-gray-400 text-sm mb-6">Um site completo para transmitir a autoridade, valores e serviços da sua empresa na internet.</p>
+                        <a href="#contato" class="inline-flex items-center text-sm font-semibold text-brandPrimary hover:underline">Quero um Site <i data-lucide="arrow-up-right" class="ml-1 w-4 h-4"></i></a>
+                    </div>
+                    <!-- Página de Venda -->
+                    <div class="bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl p-8 transition-all hover:-translate-y-1">
+                        <div class="p-3 bg-white/5 rounded-xl inline-block mb-6"><i data-lucide="shopping-bag" class="w-8 h-8 text-brandAccent"></i></div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Página de Venda</h3>
+                        <p class="text-gray-400 text-sm mb-6">Estrutura focada em copywriting e elementos persuasivos para aumentar sua taxa de vendas.</p>
+                        <a href="#contato" class="inline-flex items-center text-sm font-semibold text-brandPrimary hover:underline">Criar minha Página <i data-lucide="arrow-up-right" class="ml-1 w-4 h-4"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. PROCESSO -->
+        <section id="processo" class="py-20 bg-darkCard/30 border-t border-darkBorder">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl font-bold text-white">Como funciona nosso processo</h2>
+                    <p class="mt-2 text-gray-400">Do primeiro contato até a publicação do projeto.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                    <div class="p-4 bg-darkCard border border-darkBorder rounded-xl">
+                        <span class="text-brandPrimary font-mono text-sm">01</span>
+                        <h4 class="font-bold text-white mt-2">Briefing</h4>
+                        <p class="text-xs text-gray-400 mt-1">Entendimento do negócio e objetivos.</p>
+                    </div>
+                    <div class="p-4 bg-darkCard border border-darkBorder rounded-xl">
+                        <span class="text-brandPrimary font-mono text-sm">02</span>
+                        <h4 class="font-bold text-white mt-2">Planejamento</h4>
+                        <p class="text-xs text-gray-400 mt-1">Estrutura e experiência do usuário.</p>
+                    </div>
+                    <div class="p-4 bg-darkCard border border-darkBorder rounded-xl">
+                        <span class="text-brandPrimary font-mono text-sm">03</span>
+                        <h4 class="font-bold text-white mt-2">Design</h4>
+                        <p class="text-xs text-gray-400 mt-1">Criação do layout moderno e exclusivo.</p>
+                    </div>
+                    <div class="p-4 bg-darkCard border border-darkBorder rounded-xl">
+                        <span class="text-brandPrimary font-mono text-sm">04</span>
+                        <h4 class="font-bold text-white mt-2">Desenvolvimento</h4>
+                        <p class="text-xs text-gray-400 mt-1">Código limpo, rápido e responsivo.</p>
+                    </div>
+                    <div class="p-4 bg-darkCard border border-darkBorder rounded-xl">
+                        <span class="text-brandPrimary font-mono text-sm">05</span>
+                        <h4 class="font-bold text-white mt-2">Publicação</h4>
+                        <p class="text-xs text-gray-400 mt-1">Configuração final e site online.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    
+
+    <!-- 6. PORTFÓLIO / PROJETOS REALIZADOS -->
+<section id="projetos" class="py-20 bg-darkBg relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Cabeçalho da Seção -->
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Projetos que criamos</h2>
+            <p class="mt-4 text-gray-400">Conheça algumas das soluções digitais desenvolvidas para transformar a presença online dos nossos clientes.</p>
+        </div>
+
+        <!-- Filtros de Categorias -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12">
+            <button class="filter-btn active px-5 py-2 bg-gradient-to-r from-brandPrimary to-brandSecondary text-white font-medium text-sm rounded-full transition-all" data-filter="todos">
+                Todos os Projetos
+            </button>
+            <button class="filter-btn px-5 py-2 bg-darkCard hover:bg-darkBorder border border-darkBorder text-gray-400 hover:text-white font-medium text-sm rounded-full transition-all" data-filter="landing-page">
+                Landing Pages
+            </button>
+            <button class="filter-btn px-5 py-2 bg-darkCard hover:bg-darkBorder border border-darkBorder text-gray-400 hover:text-white font-medium text-sm rounded-full transition-all" data-filter="institucional">
+                Sites Institucionais
+            </button>
+            <button class="filter-btn px-5 py-2 bg-darkCard hover:bg-darkBorder border border-darkBorder text-gray-400 hover:text-white font-medium text-sm rounded-full transition-all" data-filter="vendas">
+                Páginas de Venda
+            </button>
+        </div>
+
+        <!-- Grid de Cards de Projetos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Projeto 1: Landing Page -->
+            <div class="project-card bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl overflow-hidden group transition-all duration-300 hover:-translate-y-2" data-category="landing-page">
+                <div class="relative overflow-hidden aspect-video bg-darkBorder">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Preview Projeto Barbearia Premium" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-darkBg/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <a href="https://wa.me/5541995885907?text=Ol%C3%A1!%20Gostaria%20de%20um%20projeto%20parecido%20com%20a%20Landing%20Page%20Barbearia." target="_blank" class="px-4 py-2 bg-gradient-to-r from-brandPrimary to-brandSecondary text-white text-xs font-bold rounded-lg shadow-lg flex items-center space-x-2">
+                            <span>Quero um projeto assim</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 bg-brandPrimary/10 text-brandPrimary border border-brandPrimary/20 text-xs font-medium rounded-full mb-3">Landing Page</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Barbearia Premium</h3>
+                    <p class="text-gray-400 text-sm mb-4">Página otimizada para agendamento rápido de serviços e apresentação de cortes masculinos.</p>
+                    <div class="flex flex-wrap gap-2 pt-2 border-t border-darkBorder">
+                        <span class="text-xs text-gray-500">#React</span>
+                        <span class="text-xs text-gray-500">#TailwindCSS</span>
+                        <span class="text-xs text-gray-500">#AltaConversao</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projeto 2: Site Institucional -->
+            <div class="project-card bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl overflow-hidden group transition-all duration-300 hover:-translate-y-2" data-category="institucional">
+                <div class="relative overflow-hidden aspect-video bg-darkBorder">
+                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=800&auto=format&fit=crop" alt="Preview Projeto Escritório de Advocacia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-darkBg/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <a href="https://wa.me/5541995885907?text=Ol%C3%A1!%20Gostaria%20de%20um%20projeto%20parecido%20com%20o%20Site%20Advocacia." target="_blank" class="px-4 py-2 bg-gradient-to-r from-brandPrimary to-brandSecondary text-white text-xs font-bold rounded-lg shadow-lg flex items-center space-x-2">
+                            <span>Quero um projeto assim</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 bg-brandSecondary/10 text-brandSecondary border border-brandSecondary/20 text-xs font-medium rounded-full mb-3">Site Institucional</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Advocacia & Associados</h3>
+                    <p class="text-gray-400 text-sm mb-4">Plataforma corporativa elegante para transmitir segurança, autoridade e listar áreas de atuação.</p>
+                    <div class="flex flex-wrap gap-2 pt-2 border-t border-darkBorder">
+                        <span class="text-xs text-gray-500">#SEO</span>
+                        <span class="text-xs text-gray-500">#DesignElegante</span>
+                        <span class="text-xs text-gray-500">#MobileFirst</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projeto 3: Página de Venda -->
+            <div class="project-card bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl overflow-hidden group transition-all duration-300 hover:-translate-y-2" data-category="vendas">
+                <div class="relative overflow-hidden aspect-video bg-darkBorder">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop" alt="Preview Projeto Curso Online" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-darkBg/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <a href="https://wa.me/5541995885907?text=Ol%C3%A1!%20Gostaria%20de%20um%20projeto%20parecido%20com%20a%20P%C3%A1gina%20de%20Vendas." target="_blank" class="px-4 py-2 bg-gradient-to-r from-brandPrimary to-brandSecondary text-white text-xs font-bold rounded-lg shadow-lg flex items-center space-x-2">
+                            <span>Quero um projeto assim</span>
+                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <span class="inline-block px-3 py-1 bg-brandAccent/10 text-brandAccent border border-brandAccent/20 text-xs font-medium rounded-full mb-3">Página de Venda</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Método Infoproduto Fit</h3>
+                    <p class="text-gray-400 text-sm mb-4">Página focada em conversão direta para venda de e-books e treinamentos com integração de checkout.</p>
+                    <div class="flex flex-wrap gap-2 pt-2 border-t border-darkBorder">
+                        <span class="text-xs text-gray-500">#Copywriting</span>
+                        <span class="text-xs text-gray-500">#CheckoutFast</span>
+                        <span class="text-xs text-gray-500">#Infoproduto</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+        <!-- 6. FAQ (Accordion) -->
+        <section id="faq" class="py-20 bg-darkBg">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-white text-center mb-12">Perguntas Frequentes</h2>
+                
+                <div class="space-y-4">
+                    <div class="bg-darkCard border border-darkBorder rounded-xl p-4 cursor-pointer faq-item">
+                        <div class="flex justify-between items-center font-semibold text-white">
+                            <span>Quanto custa criar um site?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 faq-icon transition-transform"></i>
+                        </div>
+                        <p class="text-sm text-gray-400 mt-2 hidden faq-answer">O investimento varia de acordo com o tipo de projeto (Landing Page, Institucional ou Vendas) e funcionalidades necessárias.</p>
+                    </div>
+                    <div class="bg-darkCard border border-darkBorder rounded-xl p-4 cursor-pointer faq-item">
+                        <div class="flex justify-between items-center font-semibold text-white">
+                            <span>Quanto tempo demora para desenvolver?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 faq-icon transition-transform"></i>
+                        </div>
+                        <p class="text-sm text-gray-400 mt-2 hidden faq-answer">O prazo médio varia entre 5 e 15 dias úteis, dependendo da complexidade do projeto e entrega do conteúdo.</p>
+                    </div>
+                    <div class="bg-darkCard border border-darkBorder rounded-xl p-4 cursor-pointer faq-item">
+                        <div class="flex justify-between items-center font-semibold text-white">
+                            <span>O site funciona no celular?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 faq-icon transition-transform"></i>
+                        </div>
+                        <p class="text-sm text-gray-400 mt-2 hidden faq-answer">Sim! Todos os projetos são desenvolvidos com conceito Mobile-First e funcionam perfeitamente em celulares, tablets e computadores.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <!-- 7. FORMULÁRIO DE CONTATO (Web3Forms Ativo) -->
+<section id="contato" class="py-20 bg-darkCard/40 border-t border-darkBorder">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-white">Vamos criar seu próximo projeto?</h2>
+            <p class="text-gray-400 mt-2">Preencha o formulário e entraremos em contato o mais rápido possível.</p>
+        </div>
+
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="bg-darkCard border border-darkBorder rounded-2xl p-6 sm:p-8 space-y-6">
+            <!-- Sua Chave Web3Forms -->
+            <input type="hidden" name="access_key" value="bcb0569a-20e0-414e-97b6-e32cbe993a9e">
+            
+            <!-- Assunto das notificações que você vai receber -->
+            <input type="hidden" name="subject" value="Novo Orçamento Recebido - PJF.tech">
+            
+            <!-- Proteção anti-spam Honeypot -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+            <div>
+                <label class="block text-sm font-medium text-gray-300 mb-2">Nome</label>
+                <input type="text" name="nome" required placeholder="Seu nome completo" class="w-full bg-darkBg border border-darkBorder rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandPrimary">
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">E-mail</label>
+                    <input type="email" name="email" required placeholder="seu@email.com" class="w-full bg-darkBg border border-darkBorder rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandPrimary">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-300 mb-2">WhatsApp</label>
+                    <input type="tel" name="whatsapp" required placeholder="(00) 00000-0000" class="w-full bg-darkBg border border-darkBorder rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandPrimary">
+                </div>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-300 mb-2">Tipo de Projeto</label>
+                <select name="tipo_projeto" class="w-full bg-darkBg border border-darkBorder rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandPrimary">
+                    <option value="Landing Page">Landing Page</option>
+                    <option value="Site Institucional">Site Institucional</option>
+                    <option value="Página de Venda">Página de Venda</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-300 mb-2">Mensagem</label>
+                <textarea name="mensagem" rows="4" placeholder="Conte um pouco sobre a sua necessidade..." class="w-full bg-darkBg border border-darkBorder rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandPrimary"></textarea>
+            </div>
+            
+            <button type="submit" id="submit-btn" class="w-full py-4 bg-gradient-to-r from-brandPrimary to-brandSecondary hover:opacity-90 text-white font-bold rounded-xl transition-all shadow-lg shadow-brandPrimary/20 flex items-center justify-center space-x-2">
+                <span>Solicitar Orçamento</span>
+            </button>
+            
+            <!-- Feedback visual de envio -->
+            <div id="form-result" class="text-center text-sm font-medium hidden py-2 rounded-lg"></div>
+        </form>
+    </div>
+</section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-darkBg border-t border-darkBorder py-10">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm text-gray-500">
+            <p>© 2026 PJF.tech — Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+ <!-- Botão Flutuante WhatsApp (Ícone Tradicional) -->
+<a href="https://wa.me/5541995885907?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento,%20por%20favor." 
+   target="_blank" 
+   aria-label="Contato via WhatsApp" 
+   class="fixed bottom-6 right-6 p-3.5 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full shadow-2xl z-50 transition-all hover:scale-110 flex items-center justify-center">
+    <!-- Ícone Oficial do WhatsApp -->
+    <svg class="w-7 h-7 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+    </svg>
+</a>
+
+    <!-- Nosso Arquivo JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

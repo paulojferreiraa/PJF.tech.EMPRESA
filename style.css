@@ -1,0 +1,30 @@
+/* Importação da fonte Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Regras Globais */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Animações e Transições Personalizadas */
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+/* Customização da barra de rolagem */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #090D16;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1F2937;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6366F1;
+}
