@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Altera estado do botão
+            // Altera estado do botão durante o envio
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<span>Enviando...</span>';
 
@@ -57,18 +57,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 formResult.classList.remove('hidden');
 
                 if (response.status === 200) {
-                    formResult.className = "text-center text-sm font-medium py-3 px-4 rounded-lg text-emerald-400 bg-emerald-500/10";
-                    formResult.innerHTML = "✨ Mensagem enviada com sucesso! Entraremos em contato.";
+                    formResult.className = "text-center text-sm font-medium py-4 px-5 rounded-lg text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 leading-relaxed";
+                    
+                    // Mensagem de sucesso personalizada
+                    formResult.innerHTML = `
+                        <p class="font-bold text-base mb-1">Seu formulário foi encaminhado com sucesso! ✅</p>
+                        <p>Após alguns minutos, nossa equipe entrará em contato com você para dar continuidade ao atendimento.</p>
+                        <p class="mt-1 font-medium">Agradecemos pelo contato!</p>
+                    `;
+                    
                     contactForm.reset();
                 } else {
-                    formResult.className = "text-center text-sm font-medium py-3 px-4 rounded-lg text-red-400 bg-red-500/10";
-                    formResult.innerHTML = json.message || "Erro ao enviar mensagem.";
+                    formResult.className = "text-center text-sm font-medium py-3 px-4 rounded-lg text-red-400 bg-red-500/10 border border-red-500/20";
+                    formResult.innerHTML = json.message || "Ocorreu um erro ao enviar. Tente novamente.";
                 }
             })
             .catch(error => {
                 console.error(error);
                 formResult.classList.remove('hidden');
-                formResult.className = "text-center text-sm font-medium py-3 px-4 rounded-lg text-red-400 bg-red-500/10";
+                formResult.className = "text-center text-sm font-medium py-3 px-4 rounded-lg text-red-400 bg-red-500/10 border border-red-500/20";
                 formResult.innerHTML = "Algo deu errado! Verifique sua conexão e tente novamente.";
             })
             .then(() => {
@@ -76,10 +83,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = '<span>Solicitar Orçamento</span>';
 
-                // Oculta a mensagem após 6 segundos
+                // Oculta a mensagem após 10 segundos para dar tempo de leitura
                 setTimeout(() => {
                     formResult.classList.add('hidden');
-                }, 6000);
+                }, 10000);
             });
         });
     }
