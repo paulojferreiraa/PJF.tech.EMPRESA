@@ -330,7 +330,7 @@
             </div>
         </section>
 
-  <!-- 7. FORMULÁRIO DE CONTATO (Web3Forms Ativo) -->
+<!-- 7. FORMULÁRIO DE CONTATO (Envio Sem Sair da Página) -->
 <section id="contato" class="py-20 bg-darkCard/40 border-t border-darkBorder">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-10">
@@ -338,17 +338,11 @@
             <p class="text-gray-400 mt-2">Preencha o formulário e entraremos em contato o mais rápido possível.</p>
         </div>
 
-        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="bg-darkCard border border-darkBorder rounded-2xl p-6 sm:p-8 space-y-6">
-            <!-- Sua Chave Web3Forms -->
+        <form id="contact-form" class="bg-darkCard border border-darkBorder rounded-2xl p-6 sm:p-8 space-y-6">
+            <!-- Chave Web3Forms -->
             <input type="hidden" name="access_key" value="bcb0569a-20e0-414e-97b6-e32cbe993a9e">
-            
-            <!-- Assunto das notificações que você vai receber -->
             <input type="hidden" name="subject" value="Novo Orçamento Recebido - PJF.tech">
-            
-            <!-- Nome da sua empresa no remetente -->
             <input type="hidden" name="from_name" value="PJF.tech Landing Page">
-            
-            <!-- Proteção anti-spam Honeypot -->
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
             <div>
@@ -382,7 +376,7 @@
                 <textarea name="mensagem" rows="4" placeholder="Conte um pouco sobre a sua necessidade..." class="w-full bg-darkBg border border-darkBorder rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandPrimary transition-colors"></textarea>
             </div>
             
-            <!-- Feedback visual de envio -->
+            <!-- Feedback visual do envio -->
             <div id="form-result" class="text-center text-sm font-medium hidden py-3 px-4 rounded-lg"></div>
 
             <button type="submit" id="submit-btn" class="w-full py-4 bg-gradient-to-r from-brandPrimary to-brandSecondary hover:opacity-90 text-white font-bold rounded-xl transition-all shadow-lg shadow-brandPrimary/20 flex items-center justify-center space-x-2 disabled:opacity-50 cursor-pointer">
