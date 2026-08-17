@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PJF.tech | Landing Pages, Sites Institucionais e Páginas de Venda</title>
-    <meta name="description" content="A PJF.tech cria Landing Pages, Sites Institucionais e Páginas de Venda modernas, responsivas e profissionais para empresas e negócios.">
+    <title>PJF Tech | Criação de Landing Pages e Sites de Alta Conversão</title>
+    <meta name="description" content="Desenvolvimento de Landing Pages e sites institucionais de alta performance. Aumente as vendas da sua empresa com a PJF Tech. Faça um orçamento!">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -330,7 +330,7 @@
             </div>
         </section>
 
-       <!-- 7. FORMULÁRIO DE CONTATO (Web3Forms Ativo) -->
+  <!-- 7. FORMULÁRIO DE CONTATO (Web3Forms Ativo) -->
 <section id="contato" class="py-20 bg-darkCard/40 border-t border-darkBorder">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-10">
@@ -345,47 +345,52 @@
             <!-- Assunto das notificações que você vai receber -->
             <input type="hidden" name="subject" value="Novo Orçamento Recebido - PJF.tech">
             
+            <!-- Nome da sua empresa no remetente -->
+            <input type="hidden" name="from_name" value="PJF.tech Landing Page">
+            
             <!-- Proteção anti-spam Honeypot -->
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
             <div>
                 <label class="block text-sm font-medium text-gray-300 mb-2">Nome</label>
-                <input type="text" name="nome" required placeholder="Seu nome completo" class="w-full bg-darkBg border border-darkBorder rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandPrimary">
+                <input type="text" name="name" required placeholder="Seu nome completo" class="w-full bg-darkBg border border-darkBorder rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandPrimary transition-colors">
             </div>
+            
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                     <label class="block text-sm font-medium text-gray-300 mb-2">E-mail</label>
-                    <input type="email" name="email" required placeholder="seu@email.com" class="w-full bg-darkBg border border-darkBorder rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandPrimary">
+                    <input type="email" name="email" required placeholder="seu@email.com" class="w-full bg-darkBg border border-darkBorder rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandPrimary transition-colors">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-300 mb-2">WhatsApp</label>
-                    <input type="tel" name="whatsapp" required placeholder="(00) 00000-0000" class="w-full bg-darkBg border border-darkBorder rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandPrimary">
+                    <input type="tel" name="whatsapp" required placeholder="(00) 00000-0000" class="w-full bg-darkBg border border-darkBorder rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandPrimary transition-colors">
                 </div>
             </div>
+            
             <div>
                 <label class="block text-sm font-medium text-gray-300 mb-2">Tipo de Projeto</label>
-                <select name="tipo_projeto" class="w-full bg-darkBg border border-darkBorder rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandPrimary">
+                <select name="tipo_projeto" class="w-full bg-darkBg border border-darkBorder rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandPrimary transition-colors">
                     <option value="Landing Page">Landing Page</option>
                     <option value="Site Institucional">Site Institucional</option>
                     <option value="Página de Venda">Página de Venda</option>
                     <option value="Outro">Outro</option>
                 </select>
             </div>
+            
             <div>
                 <label class="block text-sm font-medium text-gray-300 mb-2">Mensagem</label>
-                <textarea name="mensagem" rows="4" placeholder="Conte um pouco sobre a sua necessidade..." class="w-full bg-darkBg border border-darkBorder rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandPrimary"></textarea>
+                <textarea name="mensagem" rows="4" placeholder="Conte um pouco sobre a sua necessidade..." class="w-full bg-darkBg border border-darkBorder rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brandPrimary transition-colors"></textarea>
             </div>
             
-            <button type="submit" id="submit-btn" class="w-full py-4 bg-gradient-to-r from-brandPrimary to-brandSecondary hover:opacity-90 text-white font-bold rounded-xl transition-all shadow-lg shadow-brandPrimary/20 flex items-center justify-center space-x-2">
+            <!-- Feedback visual de envio -->
+            <div id="form-result" class="text-center text-sm font-medium hidden py-3 px-4 rounded-lg"></div>
+
+            <button type="submit" id="submit-btn" class="w-full py-4 bg-gradient-to-r from-brandPrimary to-brandSecondary hover:opacity-90 text-white font-bold rounded-xl transition-all shadow-lg shadow-brandPrimary/20 flex items-center justify-center space-x-2 disabled:opacity-50 cursor-pointer">
                 <span>Solicitar Orçamento</span>
             </button>
-            
-            <!-- Feedback visual de envio -->
-            <div id="form-result" class="text-center text-sm font-medium hidden py-2 rounded-lg"></div>
         </form>
     </div>
 </section>
-    </main>
 
     <!-- FOOTER -->
     <footer class="bg-darkBg border-t border-darkBorder py-10">
