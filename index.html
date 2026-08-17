@@ -33,6 +33,9 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
     <style>
         body { font-family: 'Inter', sans-serif; }
         .faq-icon {
@@ -93,16 +96,17 @@
             
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-brandPrimary mb-6">
-                    <i data-lucide="zap" class="w-4 h-4 text-brandPrimary"></i>
-                    <span>Desenvolvimento de Alta Performance</span>
+                     <span>Desenvolvimento de Alta Performance | Landing Pages | Sites Institucionais | Páginas de Venda</span>
                 </div>
 
+                
+
                 <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
-                    Seu negócio merece uma presença digital <span class="bg-gradient-to-r from-brandPrimary via-brandSecondary to-brandAccent bg-clip-text text-transparent">à altura.</span>
+                    Sites modernos para empresas que <span class="bg-gradient-to-r from-brandPrimary via-brandSecondary to-brandAccent bg-clip-text text-transparent">querem crescer no digital.</span>
                 </h1>
 
                 <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-                    Criamos Landing Pages, Sites Institucionais e Páginas de Venda modernas, rápidas e pensadas para transformar visitantes em clientes.
+                    Criamos experiências digitais modernas, rápidas e profissionais para fortalecer sua marca e gerar novas oportunidades.
                 </p>
 
                <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
@@ -225,23 +229,7 @@
         <!-- Cabeçalho da Seção -->
         <div class="text-center max-w-3xl mx-auto mb-12">
             <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Projetos que criamos</h2>
-            <p class="mt-4 text-gray-400">Conheça algumas das soluções digitais desenvolvidas para transformar a presença online dos nossos clientes.</p>
-        </div>
-
-        <!-- Filtros de Categorias -->
-        <div class="flex flex-wrap justify-center gap-3 mb-12">
-            <button class="filter-btn active px-5 py-2 bg-gradient-to-r from-brandPrimary to-brandSecondary text-white font-medium text-sm rounded-full transition-all" data-filter="todos">
-                Todos os Projetos
-            </button>
-            <button class="filter-btn px-5 py-2 bg-darkCard hover:bg-darkBorder border border-darkBorder text-gray-400 hover:text-white font-medium text-sm rounded-full transition-all" data-filter="landing-page">
-                Landing Pages
-            </button>
-            <button class="filter-btn px-5 py-2 bg-darkCard hover:bg-darkBorder border border-darkBorder text-gray-400 hover:text-white font-medium text-sm rounded-full transition-all" data-filter="institucional">
-                Sites Institucionais
-            </button>
-            <button class="filter-btn px-5 py-2 bg-darkCard hover:bg-darkBorder border border-darkBorder text-gray-400 hover:text-white font-medium text-sm rounded-full transition-all" data-filter="vendas">
-                Páginas de Venda
-            </button>
+            <p class="mt-4 text-gray-400">Soluções digitais pensadas para transformar sua presença online em novas oportunidades de negócio.</p>
         </div>
 
         <!-- Grid de Cards de Projetos -->
@@ -250,7 +238,7 @@
             <!-- Projeto 1: Landing Page -->
             <div class="project-card bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl overflow-hidden group transition-all duration-300 hover:-translate-y-2" data-category="landing-page">
                 <div class="relative overflow-hidden aspect-video bg-darkBorder">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Preview Projeto Barbearia Premium" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="img/jlm_motors.png" alt="Preview Projeto Barbearia Premium" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     <div class="absolute inset-0 bg-darkBg/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <a href="https://wa.me/5541995885907?text=Ol%C3%A1!%20Gostaria%20de%20um%20projeto%20parecido%20com%20a%20Landing%20Page%20Barbearia." target="_blank" class="px-4 py-2 bg-gradient-to-r from-brandPrimary to-brandSecondary text-white text-xs font-bold rounded-lg shadow-lg flex items-center space-x-2">
                             <span>Quero um projeto assim</span>
@@ -259,13 +247,10 @@
                     </div>
                 </div>
                 <div class="p-6">
-                    <span class="inline-block px-3 py-1 bg-brandPrimary/10 text-brandPrimary border border-brandPrimary/20 text-xs font-medium rounded-full mb-3">Landing Page</span>
-                    <h3 class="text-xl font-bold text-white mb-2">Barbearia Premium</h3>
-                    <p class="text-gray-400 text-sm mb-4">Página otimizada para agendamento rápido de serviços e apresentação de cortes masculinos.</p>
+                    <h3 class="text-xl font-bold text-white mb-2">JLM Motors</h3>
+                    <p class="text-gray-400 text-sm mb-4">Landing Page premium desenvolvida para uma empresa do segmento automotivo, com foco em posicionamento de marca e geração de contatos.</p>
                     <div class="flex flex-wrap gap-2 pt-2 border-t border-darkBorder">
-                        <span class="text-xs text-gray-500">#React</span>
-                        <span class="text-xs text-gray-500">#TailwindCSS</span>
-                        <span class="text-xs text-gray-500">#AltaConversao</span>
+                        
                     </div>
                 </div>
             </div>
@@ -273,7 +258,7 @@
             <!-- Projeto 2: Site Institucional -->
             <div class="project-card bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl overflow-hidden group transition-all duration-300 hover:-translate-y-2" data-category="institucional">
                 <div class="relative overflow-hidden aspect-video bg-darkBorder">
-                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=800&auto=format&fit=crop" alt="Preview Projeto Escritório de Advocacia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <img src="img/barbearia_ferreira.png" alt="Preview Projeto Escritório de Advocacia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     <div class="absolute inset-0 bg-darkBg/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <a href="https://wa.me/5541995885907?text=Ol%C3%A1!%20Gostaria%20de%20um%20projeto%20parecido%20com%20o%20Site%20Advocacia." target="_blank" class="px-4 py-2 bg-gradient-to-r from-brandPrimary to-brandSecondary text-white text-xs font-bold rounded-lg shadow-lg flex items-center space-x-2">
                             <span>Quero um projeto assim</span>
@@ -282,18 +267,15 @@
                     </div>
                 </div>
                 <div class="p-6">
-                    <span class="inline-block px-3 py-1 bg-brandSecondary/10 text-brandSecondary border border-brandSecondary/20 text-xs font-medium rounded-full mb-3">Site Institucional</span>
-                    <h3 class="text-xl font-bold text-white mb-2">Advocacia & Associados</h3>
-                    <p class="text-gray-400 text-sm mb-4">Plataforma corporativa elegante para transmitir segurança, autoridade e listar áreas de atuação.</p>
+                    
+                    <h3 class="text-xl font-bold text-white mb-2">Barbearia Ferreira</h3>
+                    <p class="text-gray-400 text-sm mb-4">Landing Page moderna desenvolvida para uma barbearia, com foco em presença digital, apresentação dos serviços e geração de novos contatos.</p>
                     <div class="flex flex-wrap gap-2 pt-2 border-t border-darkBorder">
-                        <span class="text-xs text-gray-500">#SEO</span>
-                        <span class="text-xs text-gray-500">#DesignElegante</span>
-                        <span class="text-xs text-gray-500">#MobileFirst</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Projeto 3: Página de Venda -->
+            <!-- Projeto 3: Página de Venda 
             <div class="project-card bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl overflow-hidden group transition-all duration-300 hover:-translate-y-2" data-category="vendas">
                 <div class="relative overflow-hidden aspect-video bg-darkBorder">
                     <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop" alt="Preview Projeto Curso Online" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -309,12 +291,10 @@
                     <h3 class="text-xl font-bold text-white mb-2">Método Infoproduto Fit</h3>
                     <p class="text-gray-400 text-sm mb-4">Página focada em conversão direta para venda de e-books e treinamentos com integração de checkout.</p>
                     <div class="flex flex-wrap gap-2 pt-2 border-t border-darkBorder">
-                        <span class="text-xs text-gray-500">#Copywriting</span>
-                        <span class="text-xs text-gray-500">#CheckoutFast</span>
-                        <span class="text-xs text-gray-500">#Infoproduto</span>
+
                     </div>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>
