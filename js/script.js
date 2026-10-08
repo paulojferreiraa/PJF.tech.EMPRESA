@@ -1,100 +1,93 @@
-// Inicializa ícones Lucide
-lucide.createIcons();
+document.addEventListener('DOMContentLoaded', () => {
+    // Inicialização dos ícones Lucide
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 
-// Menu Mobile Toggle
-const menuBtn = document.getElementById('menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-const mobileLinks = document.querySelectorAll('.mobile-link');
+    // Menu Mobile
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
 
-if (menuBtn) {
-    menuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-}
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-    });
-});
-
-// Toggle Accordion FAQ
-document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('click', () => {
-        const answer = item.querySelector('.faq-answer');
-        const icon = item.querySelector('.faq-icon');
-        
-        // Toggle resposta visível/oculta
-        answer.classList.toggle('hidden');
-        
-        // Rotaciona o ícone
-        if (icon) {
-            icon.style.transform = answer.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
-        }
-    });
-});
-
-// Form Submission Handler (Web3Forms)
-const contactForm = document.getElementById('contact-form');
-const formResult = document.getElementById('form-result');
-const submitBtn = document.getElementById('submit-btn');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        // Disable button e mostrar loading
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span>Enviando...</span>';
-        
-        // Limpar mensagem anterior
-        formResult.classList.add('hidden');
-        
-        try {
-            // Converter FormData para JSON
-            const formDataObj = new FormData(contactForm);
-            const jsonData = Object.fromEntries(formDataObj);
-            
-            // Enviar para Web3Forms com JSON
-            const response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(jsonData)
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
             });
-            
-            const data = await response.json();
-            
-            if (data.success) {
-                // Sucesso!
-                formResult.innerHTML = '✅ Orçamento recebido com sucesso! Entraremos em contato em breve.';
-                formResult.className = 'text-center text-sm font-medium py-3 px-4 rounded-lg bg-green-500/20 text-green-400 border border-green-500/30';
-                formResult.classList.remove('hidden');
-                
-                // Limpar formulário
-                contactForm.reset();
-                
-                // Reabilitar botão após 3 segundos
-                setTimeout(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = '<span>Solicitar Orçamento</span>';
-                }, 3000);
-            } else {
-                throw new Error(data.message || 'Erro ao enviar formulário');
-            }
-        } catch (error) {
-            // Erro
-            formResult.innerHTML = '❌ Erro ao enviar. Tente novamente ou entre em contato via WhatsApp.';
-            formResult.className = 'text-center text-sm font-medium py-3 px-4 rounded-lg bg-red-500/20 text-red-400 border border-red-500/30';
-            formResult.classList.remove('hidden');
-            
-            // Reabilitar botão
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = '<span>Solicitar Orçamento</span>';
-            
-            console.error('Erro no formulário:', error);
-        }
+        });
+    }
+
+    // Accordion FAQ
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon');
+            if (answer) answer.classList.toggle('hidden');
+            if (icon) icon.classList.toggle('rotate-180');
+        });
     });
-}
+
+    // Envio do Formulário Web3Forms via Fetch API
+    const contactForm = document.getElementById('contact-form');
+    const formResult = document.getElementById('form-result');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Altera estado do botão durante o envio
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Enviando...</span>';
+
+            // Prepara os dados
+            const formData = new FormData(contactForm);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                formResult.classList.remove('hidden');
+
+                if (response.status === 200) {
+                    formResult.className = "text-center text-sm font-medium py-4 px-5 rounded-lg text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 leading-relaxed";
+                    
+                    // Mensagem de sucesso personalizada
+                    formResult.innerHTML = `
+                        <p class="font-bold text-base mb-1">Seu formulário foi encaminhado com sucesso! ✅</p>
+                        <p>Após alguns minutos, nossa equipe entrará em contato com você para dar continuidade ao atendimento.</p>
+                        <p class="mt-1 font-medium">Agradecemos pelo contato!</p>
+                    `;
+                    
+                    contactForm.reset();
+                } else {
+                    formResult.className = "text-center text-sm font-medium py-3 px-4 rounded-lg text-red-400 bg-red-500/10 border border-red-500/20";
+                    formResult.innerHTML = json.message || "Ocorreu um erro ao enviar. Tente novamente.";
+                }
+            })
+            .catch(error => {
+                console.error(error);
+                formResult.classList.remove('hidden');
+                formResult.className = "text-center text-sm font-medium py-3 px-4 rounded-lg text-red-400 bg-red-500/10 border border-red-500/20";
+                formResult.innerHTML = "Algo deu errado! Verifique sua conexão e tente novamente.";
+            })
+            .then(() => {
+                // Restaura o botão
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span>Solicitar Orçamento</span>';
+
+                // Oculta a mensagem após 10 segundos para dar tempo de leitura
+                setTimeout(() => {
+                    formResult.classList.add('hidden');
+                }, 10000);
+            });
+        });
+    }
+});
