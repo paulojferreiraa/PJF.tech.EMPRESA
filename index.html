@@ -36,6 +36,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modern.css">
 
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -45,6 +46,8 @@
     </style>
 </head>
 <body class="bg-darkBg text-gray-100 antialiased selection:bg-brandPrimary selection:text-white">
+    <div id="scroll-bar"></div>
+    <div id="cursor-glow"></div>
 
     <!-- 1. HEADER -->
     <header class="fixed top-0 left-0 w-full z-50 bg-darkBg/80 backdrop-blur-md border-b border-darkBorder">
@@ -58,8 +61,8 @@
 
             <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
                 <a href="#inicio" class="hover:text-brandPrimary transition-colors">Início</a>
-                <a href="#diferenciais" class="hover:text-brandPrimary transition-colors">Diferenciais</a>
                 <a href="#processo" class="hover:text-brandPrimary transition-colors">Processo</a>
+                <a href="#projetos" class="hover:text-brandPrimary transition-colors">Áreas de interesse</a>
                 <a href="#faq" class="hover:text-brandPrimary transition-colors">FAQ</a>
             </nav>
 
@@ -80,9 +83,9 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-darkCard border-b border-darkBorder px-4 pt-4 pb-6 space-y-4">
             <a href="#inicio" class="block text-gray-300 hover:text-white mobile-link">Início</a>
-            <a href="#diferenciais" class="block text-gray-300 hover:text-white mobile-link">Diferenciais</a>
             <a href="#servicos" class="block text-gray-300 hover:text-white mobile-link">Serviços</a>
             <a href="#processo" class="block text-gray-300 hover:text-white mobile-link">Processo</a>
+            <a href="#projetos" class="block text-gray-300 hover:text-white mobile-link">Áreas de interesse</a>
             <a href="#faq" class="block text-gray-300 hover:text-white mobile-link">FAQ</a>
             <a href="#contato" class="block text-center py-3 bg-gradient-to-r from-brandPrimary to-brandSecondary text-white font-medium rounded-lg mobile-link">
                 Solicitar orçamento
@@ -93,99 +96,149 @@
     <main>
         <!-- 2. HERO SECTION -->
         <section id="inicio" class="relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden">
+            <canvas id="hero-canvas" aria-hidden="true"></canvas>
             <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brandPrimary/20 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
-            
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-brandPrimary mb-6">
-                     <span>Desenvolvimento de Alta Performance | Landing Pages | Sites Institucionais | Páginas de Venda</span>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(99,102,241,0.15),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(139,92,246,0.12),transparent_35%)] -z-10"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="hero-grid items-center gap-10 lg:gap-16">
+                    <div class="text-center lg:text-left">
+                        <div class="hero-badge inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-brandPrimary mb-6">
+                            <span>Design estratégico + desenvolvimento rápido</span>
+                        </div>
+
+                        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.05] max-w-3xl lg:max-w-none">
+                            Sites modernos para empresas que <span class="bg-gradient-to-r from-brandPrimary via-brandSecondary to-brandAccent bg-clip-text text-transparent">querem vender mais.</span>
+                        </h1>
+
+                        <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-2xl lg:max-w-xl leading-relaxed">
+                            Criamos páginas e sites com design premium, estrutura pensada para conversão e presença digital que transmite confiança desde o primeiro clique.
+                        </p>
+
+                        <div class="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                            <a href="https://wa.me/5541995885907?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento,%20por%20favor." target="_blank" class="inline-flex items-center justify-center px-6 py-3.5 bg-gradient-to-r from-brandPrimary to-brandSecondary hover:opacity-90 text-white font-medium rounded-xl shadow-lg shadow-brandPrimary/25 transition-all duration-300 text-base hover:-translate-y-0.5">
+                                <span>Solicitar orçamento</span>
+                                <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                            </a>
+                            <a href="#servicos" class="inline-flex items-center justify-center px-6 py-3.5 bg-darkCard hover:bg-darkBorder border border-darkBorder text-gray-300 font-medium rounded-xl transition-all duration-300 text-base hover:border-brandPrimary/50">
+                                Ver soluções
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero-visual">
+                        <div class="glass-panel">
+                            <div class="panel-header">
+                                <span class="status-dot"></span>
+                                <span class="panel-label">PJF.tech</span>
+                                <span class="panel-tag">Foco em conversão</span>
+                            </div>
+
+                            <div class="panel-body">
+                                <div class="mini-stat">
+                                    <span class="mini-label">Conversão potencial</span>
+                                    <strong>+38%</strong>
+                                </div>
+                                <div class="mini-progress">
+                                    <span></span>
+                                </div>
+
+                                <div class="feature-stack">
+                                    <div class="feature-item active">
+                                        <div class="feature-icon"><i data-lucide="rocket"></i></div>
+                                        <div>
+                                            <span>Landing Page Premium</span>
+                                            <small>Estratégia + design + CTA</small>
+                                        </div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon"><i data-lucide="smartphone"></i></div>
+                                        <div>
+                                            <span>Mobile First</span>
+                                            <small>Experiência otimizada em telas</small>
+                                        </div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <div class="feature-icon"><i data-lucide="chart-no-axes-combined"></i></div>
+                                        <div>
+                                            <span>Mais conversão</span>
+                                            <small>Estrutura pensada para vender</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                
-
-                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
-                    Sites modernos para empresas que <span class="bg-gradient-to-r from-brandPrimary via-brandSecondary to-brandAccent bg-clip-text text-transparent">querem crescer no digital.</span>
-                </h1>
-
-                <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-                    Criamos experiências digitais modernas, rápidas e profissionais para fortalecer sua marca e gerar novas oportunidades.
-                </p>
-
-               <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-    <a href="https://wa.me/5541995885907?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento,%20por%20favor." target="_blank" class="inline-flex items-center justify-center px-6 py-3.5 bg-gradient-to-r from-brandPrimary to-brandSecondary hover:opacity-90 text-white font-medium rounded-xl shadow-lg shadow-brandPrimary/25 transition-all text-base">
-        <span>Solicitar orçamento</span>
-        <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
-    </a>
-    <a href="#servicos" class="inline-flex items-center justify-center px-6 py-3.5 bg-darkCard hover:bg-darkBorder border border-darkBorder text-gray-300 font-medium rounded-xl transition-all text-base">
-        Ver soluções
-    </a>
-</div>
-            </div>
-        </section>
-
-        <!-- 3. DIFERENCIAIS -->
-        <section id="diferenciais" class="py-12 bg-darkCard/50 border-y border-darkBorder">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                    <div class="p-4">
-                        <i data-lucide="zap" class="w-8 h-8 text-brandPrimary mx-auto mb-2"></i>
-                        <h4 class="font-bold text-white">⚡ Performance</h4>
-                        <p class="text-xs text-gray-400 mt-1">Sites rápidos e otimizados.</p>
+                <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                    <div class="stat-card">
+                        <span class="stat-number">+120</span>
+                        <span class="stat-label">Projetos entregues</span>
                     </div>
-                    <div class="p-4">
-                        <i data-lucide="smartphone" class="w-8 h-8 text-brandPrimary mx-auto mb-2"></i>
-                        <h4 class="font-bold text-white">📱 Responsividade</h4>
-                        <p class="text-xs text-gray-400 mt-1">Perfeito em qualquer tela.</p>
+                    <div class="stat-card">
+                        <span class="stat-number">5x</span>
+                        <span class="stat-label">Mais visibilidade</span>
                     </div>
-                    <div class="p-4">
-                        <i data-lucide="target" class="w-8 h-8 text-brandPrimary mx-auto mb-2"></i>
-                        <h4 class="font-bold text-white">🎯 Conversão</h4>
-                        <p class="text-xs text-gray-400 mt-1">Foco em gerar negócios.</p>
+                    <div class="stat-card">
+                        <span class="stat-number">24h</span>
+                        <span class="stat-label">Resposta rápida</span>
                     </div>
-                    <div class="p-4">
-                        <i data-lucide="shield-check" class="w-8 h-8 text-brandPrimary mx-auto mb-2"></i>
-                        <h4 class="font-bold text-white">🔒 Qualidade</h4>
-                        <p class="text-xs text-gray-400 mt-1">Código limpo e seguro.</p>
+                    <div class="stat-card">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Foco em resultados</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 4. SERVIÇOS -->
-        <section id="servicos" class="py-20 bg-darkBg">
+        <section id="servicos" class="py-24 bg-darkBg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Soluções digitais para diferentes objetivos</h2>
-                    <p class="mt-4 text-gray-400">Desenvolvemos páginas profissionais direcionadas para resultados reais.</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Sua presença online deve gerar resultado real</h2>
+                    <p class="mt-4 text-gray-400">Não criamos páginas só bonitas — criamos experiências que ajudam sua marca a ganhar autoridade, captar oportunidades e vender melhor.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Landing Page -->
                     <div class="bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl p-8 transition-all hover:-translate-y-1">
                         <div class="p-3 bg-white/5 rounded-xl inline-block mb-6"><i data-lucide="layout" class="w-8 h-8 text-brandPrimary"></i></div>
-                        <h3 class="text-2xl font-bold text-white mb-3">Landing Page</h3>
-                        <p class="text-gray-400 text-sm mb-6">Ideal para campanhas, anúncios, lançamento de produtos e captação direta de leads.</p>
-                        <a href="#contato" class="inline-flex items-center text-sm font-semibold text-brandPrimary hover:underline">Quero uma Landing Page <i data-lucide="arrow-up-right" class="ml-1 w-4 h-4"></i></a>
+                        <h3 class="text-2xl font-bold text-white mb-3">Para captar mais clientes</h3>
+                        <p class="text-gray-400 text-sm mb-6">Landing pages com estrutura clara, copy estratégica e CTA pensado para transformar visitas em leads e contatos.</p>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li>• Posicionamento claro</li>
+                            <li>• Proposta forte</li>
+                            <li>• Foco em captação</li>
+                        </ul>
                     </div>
-                    <!-- Site Institucional -->
+
                     <div class="bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl p-8 transition-all hover:-translate-y-1">
                         <div class="p-3 bg-white/5 rounded-xl inline-block mb-6"><i data-lucide="building-2" class="w-8 h-8 text-brandSecondary"></i></div>
-                        <h3 class="text-2xl font-bold text-white mb-3">Site Institucional</h3>
-                        <p class="text-gray-400 text-sm mb-6">Um site completo para transmitir a autoridade, valores e serviços da sua empresa na internet.</p>
-                        <a href="#contato" class="inline-flex items-center text-sm font-semibold text-brandPrimary hover:underline">Quero um Site <i data-lucide="arrow-up-right" class="ml-1 w-4 h-4"></i></a>
+                        <h3 class="text-2xl font-bold text-white mb-3">Para fortalecer sua marca</h3>
+                        <p class="text-gray-400 text-sm mb-6">Sites institucionais que transmitem confiança, organização e autoridade para quem visita sua empresa.</p>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li>• Credibilidade visual</li>
+                            <li>• Serviços bem apresentados</li>
+                            <li>• Identidade profissional</li>
+                        </ul>
                     </div>
-                    <!-- Página de Venda -->
+
                     <div class="bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl p-8 transition-all hover:-translate-y-1">
                         <div class="p-3 bg-white/5 rounded-xl inline-block mb-6"><i data-lucide="shopping-bag" class="w-8 h-8 text-brandAccent"></i></div>
-                        <h3 class="text-2xl font-bold text-white mb-3">Página de Venda</h3>
-                        <p class="text-gray-400 text-sm mb-6">Estrutura focada em copywriting e elementos persuasivos para aumentar sua taxa de vendas.</p>
-                        <a href="#contato" class="inline-flex items-center text-sm font-semibold text-brandPrimary hover:underline">Criar minha Página <i data-lucide="arrow-up-right" class="ml-1 w-4 h-4"></i></a>
+                        <h3 class="text-2xl font-bold text-white mb-3">Para vender com mais eficiência</h3>
+                        <p class="text-gray-400 text-sm mb-6">Páginas de venda pensadas para orientar o visitante até a decisão, com foco em clareza, valor e conversão.</p>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li>• Estrutura persuasiva</li>
+                            <li>• Mensagem orientada ao cliente</li>
+                            <li>• Conversão em foco</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 5. PROCESSO -->
-        <section id="processo" class="py-20 bg-darkCard/30 border-t border-darkBorder">
+        <section id="processo" class="py-24 bg-darkCard/30 border-t border-darkBorder">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="text-3xl font-bold text-white">Como funciona nosso processo</h2>
@@ -221,118 +274,128 @@
             </div>
         </section>
 
-    
-
-    <!-- 6. PORTFÓLIO / PROJETOS REALIZADOS -->
-<section id="projetos" class="py-20 bg-darkBg relative">
+        <!-- 6. ÁREAS DE INTERESSE -->
+<section id="projetos" class="py-24 bg-darkBg relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <!-- Cabeçalho da Seção -->
         <div class="text-center max-w-3xl mx-auto mb-12">
-            <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Projetos que criamos</h2>
-            <p class="mt-4 text-gray-400">Soluções digitais pensadas para transformar sua presença online em novas oportunidades de negócio.</p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Áreas de interesse</h2>
+            <p class="mt-4 text-gray-400">Soluções digitais para negócios que querem crescer com presença profissional, clareza e estratégia.</p>
         </div>
 
-        <!-- Grid de Cards de Projetos -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <!-- Projeto 1: Landing Page -->
-            <div class="project-card bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl overflow-hidden group transition-all duration-300 hover:-translate-y-2" data-category="landing-page">
-               <div class="relative overflow-hidden aspect-video bg-darkBorder">
-    <img src="img/jlm_motors.png" alt="Preview Projeto JLM Motors" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-    <div class="absolute inset-0 bg-darkBg/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-2">
-        <a href="https://jlm-motors.vercel.app/" target="_blank" class="px-4 py-2 bg-darkBg/80 border border-brandPrimary text-white text-xs font-bold rounded-lg shadow-lg flex items-center space-x-2 hover:bg-brandPrimary/20 transition-colors">
-            <span>Ver Projeto</span>
-            <i data-lucide="external-link" class="w-4 h-4"></i>
-        </a>
-        <a href="https://wa.me/5541995885907?text=Ol%C3%A1!%20Gostaria%20de%20um%20projeto%20parecido%20com%20o%20da%20JLM%20Motors." target="_blank" class="px-4 py-2 bg-gradient-to-r from-brandPrimary to-brandSecondary text-white text-xs font-bold rounded-lg shadow-lg flex items-center space-x-2">
-            <span>Quero um projeto assim</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-        </a>
-    </div>
-</div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-white mb-2">JLM Motors</h3>
-                    <p class="text-gray-400 text-sm mb-4">Landing Page premium desenvolvida para uma empresa do segmento automotivo</p>
-                    <div class="flex flex-wrap gap-2 pt-2 border-t border-darkBorder">
-                        
-                    </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+            <div class="project-card bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl p-6 group transition-all duration-300 hover:-translate-y-2">
+                <div class="w-14 h-14 rounded-2xl bg-brandPrimary/10 border border-brandPrimary/20 flex items-center justify-center mb-5">
+                    <i data-lucide="layout-template" class="w-7 h-7 text-brandPrimary"></i>
                 </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Landing Pages</h3>
+                <p class="text-gray-400 text-sm mb-4">Estruturas focadas em conversão para campanhas, anúncios e captação de clientes.</p>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li>• Copy estratégica</li>
+                    <li>• CTA objetivo</li>
+                    <li>• Foco em venda</li>
+                </ul>
             </div>
 
-            <!-- Projeto 2: Site Institucional -->
-            <div class="project-card bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl overflow-hidden group transition-all duration-300 hover:-translate-y-2" data-category="institucional">
-               <div class="relative overflow-hidden aspect-video bg-darkBorder">
-    <img src="img/barbearia_ferreira.png" alt="Preview Projeto Barbearia Ferreira" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-    <div class="absolute inset-0 bg-darkBg/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-2">
-        <a href="https://barbearia-ferreira-seven.vercel.app/" target="_blank" class="px-4 py-2 bg-darkBg/80 border border-brandPrimary text-white text-xs font-bold rounded-lg shadow-lg flex items-center space-x-2 hover:bg-brandPrimary/20 transition-colors">
-            <span>Ver Projeto</span>
-            <i data-lucide="external-link" class="w-4 h-4"></i>
-        </a>
-        <a href="https://wa.me/5541995885907?text=Ol%C3%A1!%20Gostaria%20de%20um%20projeto%20parecido%20com%20o%20da%20Barbearia%20Ferreira." target="_blank" class="px-4 py-2 bg-gradient-to-r from-brandPrimary to-brandSecondary text-white text-xs font-bold rounded-lg shadow-lg flex items-center space-x-2">
-            <span>Quero um projeto assim</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-        </a>
-    </div>
-</div>
-                <div class="p-6">
-                    
-                    <h3 class="text-xl font-bold text-white mb-2">Barbearia Ferreira</h3>
-                    <p class="text-gray-400 text-sm mb-4">Landing Page moderna desenvolvida para uma barbearia, com foco em presença digital, apresentação dos serviços</p>
-                    <div class="flex flex-wrap gap-2 pt-2 border-t border-darkBorder">
-                    </div>
+            <div class="project-card bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl p-6 group transition-all duration-300 hover:-translate-y-2">
+                <div class="w-14 h-14 rounded-2xl bg-brandSecondary/10 border border-brandSecondary/20 flex items-center justify-center mb-5">
+                    <i data-lucide="building-2" class="w-7 h-7 text-brandSecondary"></i>
                 </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Sites Institucionais</h3>
+                <p class="text-gray-400 text-sm mb-4">Presença digital profissional para empresas que querem transmitir confiança e autoridade.</p>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li>• Apresentação clara</li>
+                    <li>• Serviços e diferenciais</li>
+                    <li>• Credibilidade visual</li>
+                </ul>
             </div>
 
-           <!-- Projeto 3: Dra. Ivete Hafemann -->
-<div class="project-card bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl overflow-hidden group transition-all duration-300 hover:-translate-y-2" data-category="vendas">
-    <div class="relative overflow-hidden aspect-video bg-darkBorder">
-        <img src="img/dra-ivete.png" alt="Preview Projeto Dra. Ivete Hafemann" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-        <div class="absolute inset-0 bg-darkBg/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-2">
-            <a href="https://www.draivetehafemann.com.br/" target="_blank" class="px-4 py-2 bg-darkBg/80 border border-brandPrimary text-white text-xs font-bold rounded-lg shadow-lg flex items-center space-x-2 hover:bg-brandPrimary/20 transition-colors">
-                <span>Ver Projeto</span>
-                <i data-lucide="external-link" class="w-4 h-4"></i>
-            </a>
-            <a href="img/dra-ivete.png" target="_blank" class="px-4 py-2 bg-gradient-to-r from-brandPrimary to-brandSecondary text-white text-xs font-bold rounded-lg shadow-lg flex items-center space-x-2">
-                <span>Quero um projeto assim</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-            </a>
-        </div>
-    </div>
-    <div class="p-6">
-        <h3 class="text-xl font-bold text-white mb-2">Dra. Ivete Hafemann</h3>
-        <p class="text-gray-400 text-sm mb-4">Landing Page moderna desenvolvida para uma médica, com foco em presença digital, apresentação dos serviços e geração de novos pacientes.</p>
-        <div class="flex flex-wrap gap-2 pt-2 border-t border-darkBorder">
-        </div>
-    </div>
-</div>
+            <div class="project-card bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl p-6 group transition-all duration-300 hover:-translate-y-2">
+                <div class="w-14 h-14 rounded-2xl bg-brandAccent/10 border border-brandAccent/20 flex items-center justify-center mb-5">
+                    <i data-lucide="shopping-cart" class="w-7 h-7 text-brandAccent"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Páginas de Vendas</h3>
+                <p class="text-gray-400 text-sm mb-4">Estruturas persuasivas para aumentar taxa de conversão e gerar mais oportunidades reais.</p>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li>• Proposta forte</li>
+                    <li>• Segmentação e intenção</li>
+                    <li>• Reforço de valor</li>
+                </ul>
+            </div>
 
-<div class="project-card bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl overflow-hidden group transition-all duration-300 hover:-translate-y-2" data-category="vendas">
-    <div class="relative overflow-hidden aspect-video bg-darkBorder">
-        <img src="img/kau-site.png" alt="Preview Projeto Instrumentadora Kau Oliveira" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-        <div class="absolute inset-0 bg-darkBg/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-2">
-            <a href="https://instrumentadora-kau-oliveira.vercel.app/index.html" target="_blank" class="px-4 py-2 bg-darkBg/80 border border-brandPrimary text-white text-xs font-bold rounded-lg shadow-lg flex items-center space-x-2 hover:bg-brandPrimary/20 transition-colors">
-                <span>Ver Projeto</span>
-                <i data-lucide="external-link" class="w-4 h-4"></i>
-            </a>
-            <a href="img/kau-site.png" target="_blank" class="px-4 py-2 bg-gradient-to-r from-brandPrimary to-brandSecondary text-white text-xs font-bold rounded-lg shadow-lg flex items-center space-x-2">
-                <span>Quero um projeto assim</span>
-                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-            </a>
-        </div>
-    </div>
-    <div class="p-6">
-        <h3 class="text-xl font-bold text-white mb-2">Instrumentadora Kauane Oliveira</h3>
-        <p class="text-gray-400 text-sm mb-4">Landing Page moderna desenvolvida para uma instrumentadora, com foco em presença digital, apresentação dos serviços.</p>
-        <div class="flex flex-wrap gap-2 pt-2 border-t border-darkBorder">
-        </div>
-    </div>
-</div>
+            <div class="project-card bg-darkCard border border-darkBorder hover:border-brandPrimary/50 rounded-2xl p-6 group transition-all duration-300 hover:-translate-y-2">
+                <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-5">
+                    <i data-lucide="megaphone" class="w-7 h-7 text-emerald-400"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Estratégia Digital</h3>
+                <p class="text-gray-400 text-sm mb-4">Soluções pensadas para posicionar marca, aumentar alcance e organizar melhor a comunicação online.</p>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li>• Posicionamento</li>
+                    <li>• Comunicação</li>
+                    <li>• Foco em crescimento</li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
-        <!-- 6. FAQ (Accordion) -->
-        <section id="faq" class="py-20 bg-darkBg">
+        <!-- 6. DEPOIMENTOS -->
+        <section class="py-24 bg-darkCard/30 border-t border-darkBorder">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">O que clientes pensam sobre a nossa abordagem</h2>
+                    <p class="mt-4 text-gray-400">Trabalhamos para entregar presença digital que transmite confiança e ajuda negócios a crescer.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-darkCard border border-darkBorder rounded-2xl p-6">
+                        <div class="flex items-center gap-1 text-yellow-400 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed mb-5">“O site ficou muito mais profissional e a diferença na percepção da marca foi imediata. Ganhamos muito mais credibilidade.”</p>
+                        <div>
+                            <strong class="text-white">Cliente de estética</strong>
+                            <p class="text-sm text-gray-400">Negócio local</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-darkCard border border-darkBorder rounded-2xl p-6">
+                        <div class="flex items-center gap-1 text-yellow-400 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed mb-5">“A estrutura do site ficou muito clara, profissional e consegue transmitir exatamente o que nós queremos vender.”</p>
+                        <div>
+                            <strong class="text-white">Cliente de saúde</strong>
+                            <p class="text-sm text-gray-400">Atendimento e presença digital</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-darkCard border border-darkBorder rounded-2xl p-6">
+                        <div class="flex items-center gap-1 text-yellow-400 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed mb-5">“Ficou muito acima do que esperávamos. Melhorou a imagem da marca e deixou o negócio muito mais elegante.”</p>
+                        <div>
+                            <strong class="text-white">Cliente automotivo</strong>
+                            <p class="text-sm text-gray-400">Marca e campanha</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FAQ (Accordion) -->
+        <section id="faq" class="py-24 bg-darkBg">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-white text-center mb-12">Perguntas Frequentes</h2>
                 
@@ -342,28 +405,49 @@
                             <span>Quanto custa criar um site?</span>
                             <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 faq-icon transition-transform"></i>
                         </div>
-                        <p class="text-sm text-gray-400 mt-2 hidden faq-answer">O investimento varia de acordo com o tipo de projeto (Landing Page, Institucional ou Vendas) e funcionalidades necessárias.</p>
+                        <p class="text-sm text-gray-400 mt-2 hidden faq-answer">O valor depende do tipo de projeto e do nível de estratégia e desenvolvimento necessário. Em geral, o objetivo é entregar uma solução que ajude a empresa a vender e fortalecer sua presença online.</p>
                     </div>
                     <div class="bg-darkCard border border-darkBorder rounded-xl p-4 cursor-pointer faq-item">
                         <div class="flex justify-between items-center font-semibold text-white">
                             <span>Quanto tempo demora para desenvolver?</span>
                             <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 faq-icon transition-transform"></i>
                         </div>
-                        <p class="text-sm text-gray-400 mt-2 hidden faq-answer">O prazo médio varia entre 5 e 15 dias úteis, dependendo da complexidade do projeto e entrega do conteúdo.</p>
+                        <p class="text-sm text-gray-400 mt-2 hidden faq-answer">Projetos mais diretos costumam sair em poucos dias, enquanto entregas com mais estratégia e funcionalidades podem levar mais tempo. O processo é pensado para ser eficiente e com boa qualidade.</p>
                     </div>
                     <div class="bg-darkCard border border-darkBorder rounded-xl p-4 cursor-pointer faq-item">
                         <div class="flex justify-between items-center font-semibold text-white">
                             <span>O site funciona no celular?</span>
                             <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 faq-icon transition-transform"></i>
                         </div>
-                        <p class="text-sm text-gray-400 mt-2 hidden faq-answer">Sim! Todos os projetos são desenvolvidos com conceito Mobile-First e funcionam perfeitamente em celulares, tablets e computadores.</p>
+                        <p class="text-sm text-gray-400 mt-2 hidden faq-answer">Sim. Todos os projetos são pensados em Mobile First, ou seja, responsivos e otimizados para celular, tablet e desktop.</p>
+                    </div>
+                    <div class="bg-darkCard border border-darkBorder rounded-xl p-4 cursor-pointer faq-item">
+                        <div class="flex justify-between items-center font-semibold text-white">
+                            <span>O que eu ganho com uma Landing Page?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-400 faq-icon transition-transform"></i>
+                        </div>
+                        <p class="text-sm text-gray-400 mt-2 hidden faq-answer">Você ganha uma estrutura focada em atrair atenção, transmitir valor e orientar o visitante até a ação desejada, como contato, lead ou venda.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-<!-- 7. FORMULÁRIO DE CONTATO -->
-<section id="contato" class="py-20 bg-darkCard/40 border-t border-darkBorder">
+        <section class="py-10 bg-darkBg">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="cta-banner">
+                    <div>
+                        <p class="cta-kicker">Sua presença online precisa vender por você</p>
+                        <h3>Pronto para transformar sua marca em uma máquina de confiança e conversão?</h3>
+                    </div>
+                    <a href="#contato" class="inline-flex items-center justify-center px-6 py-3.5 bg-gradient-to-r from-brandPrimary to-brandSecondary hover:opacity-90 text-white font-medium rounded-xl shadow-lg shadow-brandPrimary/25 transition-all duration-300 text-base hover:-translate-y-0.5">
+                        Falar com especialista
+                    </a>
+                </div>
+            </div>
+        </section>
+
+<!-- 8. FORMULÁRIO DE CONTATO -->
+<section id="contato" class="py-24 bg-darkCard/40 border-t border-darkBorder">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-10">
             <h2 class="text-3xl font-bold text-white">Vamos criar seu próximo projeto?</h2>
@@ -436,6 +520,8 @@
 </a>
 
     <!-- Nosso Arquivo JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/modern.js"></script>
 </body>
 </html>
